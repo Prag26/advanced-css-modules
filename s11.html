@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Cube with CSS</title>
+    <style>
+        body {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .scene {
+            width: 200px;
+            height: 200px;
+            perspective: 600px;
+        }
+        .cube {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-30deg);
+            animation: spin 5s infinite linear;
+        }
+        @keyframes spin {
+            0% { transform: rotateX(-30deg) rotateY(-30deg); }
+            100% { transform: rotateX(-30deg) rotateY(330deg); }
+        }
+        .face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 150, 255, 0.7);
+            border: 2px solid #fff;
+            box-sizing: border-box;
+        }
+        .face.front  { transform: rotateY(0deg) translateZ(50px); }
+        .face.back   { transform: rotateY(180deg) translateZ(50px); }
+        .face.right  { transform: rotateY(90deg) translateZ(50px); }
+        .face.left   { transform: rotateY(-90deg) translateZ(50px); }
+        .face.top    { transform: rotateX(90deg) translateZ(50px); }
+        .face.bottom { transform: rotateX(-90deg) translateZ(50px); }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+</body>
+</html>

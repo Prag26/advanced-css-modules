@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons with CSS Variables</title>
+    <style>
+        :root {
+            --primaryColor: #00b7ff;
+            --secondaryColor: #6c757d;
+        }
+        #primaryBtn {
+            background-color: var(--primaryColor);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #secondaryBtn {
+            background-color: var(--secondaryColor);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="primaryBtn">Primary Button</button>
+    <button id="secondaryBtn">Secondary Button</button>
+</body>
+</html>
+
